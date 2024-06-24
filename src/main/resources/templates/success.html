@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registration Successful</h2>
+    <div class="alert alert-success" role="alert">
+        User registered successfully! User ID: <strong th:text="${userId}"></strong>
+    </div>
+
+    <!-- Download Links Section -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Download User Information</h5>
+            <p class="card-text">Choose a format to download:</p>
+            <a th:href="@{/download/{userId}/document(userId=${userId})}" class="btn btn-primary" target="_blank">Download as DOCX</a>
+            <a th:href="@{/download/{userId}/pdf(userId=${userId})}" class="btn btn-danger" target="_blank">Download as PDF</a>
+        </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <p><a href="/register1" class="btn btn-primary">Register Another User</a></p>
+    <p><a href="/" class="btn btn-secondary">Back to Home</a></p>
+</div>
+</body>
+</html>
